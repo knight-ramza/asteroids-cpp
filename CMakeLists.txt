@@ -14,4 +14,12 @@ file(GLOB_RECURSE ASTEROIDS_SRC_FILES
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
 
+add_subdirectory(raylib)
+
 add_executable(asteroids ${ASTEROIDS_SRC_FILES})
+
+target_link_libraries(asteroids raylib)
+
+if(BUILD_TESTS)
+    add_subdirectory(tests)
+endif()
