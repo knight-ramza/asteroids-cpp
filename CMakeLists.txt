@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.20)
 
 project(asteroids LANGUAGES CXX)
 
+option(BUILD_TESTS "Build the test executable" OFF)
+
 if(NOT CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     message(FATAL_ERROR "This project is configured to build with Clang (clang++).")
 endif()
@@ -21,5 +23,5 @@ add_executable(asteroids ${ASTEROIDS_SRC_FILES})
 target_link_libraries(asteroids raylib)
 
 if(BUILD_TESTS)
-    add_subdirectory(tests)
+    add_subdirectory(test)
 endif()

@@ -28,7 +28,7 @@ $configureArgs = @(
     "-G", "Ninja",
     "-DCMAKE_CXX_COMPILER=clang++",
     "-DCMAKE_BUILD_TYPE=$Configuration",
-    "-DBUILD_TESTS=OFF"
+    "-DBUILD_TESTS=ON"
 )
 
 & cmake @configureArgs
